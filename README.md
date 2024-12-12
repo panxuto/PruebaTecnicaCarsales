@@ -1,59 +1,88 @@
 # PruebaTecnicaCarsales
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Este proyecto fue desarrollado en Angular como parte de una prueba técnica. La aplicación consume datos de la API pública de Rick and Morty para mostrar una lista de episodios, permite filtrar episodios por nombre, y muestra detalles de un episodio seleccionado. Además, implementa una arquitectura Backend for Frontend (BFF) para el consumo de servicios.
 
-## Development server
+## Funcionalidades principales
 
-To start a local development server, run:
+Lista de episodios: Muestra todos los episodios de la API de Rick and Morty.
 
+Filtro: Permite filtrar episodios por nombre.
+
+Detalles del episodio: Al hacer clic en un episodio, se muestra información detallada, como la fecha de emisión, el código del episodio y los personajes asociados.
+
+Arquitectura BFF: Un servidor en Node.js actúa como intermediario entre la aplicación Angular y la API de Rick and Morty.
+
+## Requisitos previos
+
+Antes de comenzar, asegúrate de tener instalados los siguientes programas:
+
+Node.js (versión 18 o superior)
+
+Angular CLI (versión 15 o superior)
+
+Para instalar Angular CLI globalmente, ejecuta:
+```bash
+npm install -g @angular/cli
+```
+
+
+# Cómo ejecutar el proyecto
+
+### 1. Clonar el repositorio
+
+Clona este repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/panxuto/PruebaTecnicaCarsales.git
+cd PruebaTecnicaCarsales
+```
+
+### 2. Instalar dependencias del frontend
+
+Instala las dependencias necesarias para el proyecto Angular:
+```bash
+npm install
+```
+
+### 3. Configurar y ejecutar el BFF
+
+Ve a la carpeta bff:
+```bash
+cd bff
+```
+
+Instala las dependencias del backend:
+```bash
+npm install
+```
+Inicia el servidor BFF:
+```bash
+node index.js
+```
+Esto levantará el servidor en http://localhost:3000.
+
+### 4. Ejecutar el servidor de desarrollo Angular
+
+Regresa a la carpeta raíz del proyecto:
+```bash
+cd ..
+```
+Inicia el servidor de desarrollo Angular:
 ```bash
 ng serve
 ```
+Abre tu navegador en http://localhost:4200.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+#Cómo probar las funcionalidades
 
-## Code scaffolding
+Lista de episodios: La lista aparece automáticamente al abrir la aplicación.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Filtro: Escribe un texto en el campo "Filtrar Episodios por Nombre" para filtrar los episodios.
 
-```bash
-ng generate component component-name
-```
+Detalles del episodio: Haz clic en un episodio para ver su detalle en la parte derecha de la pantalla
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+# Información adicional
+API utilizada: Rick and Morty API
+Arquitectura: El proyecto implementa una arquitectura Backend for Frontend (BFF) para mejorar la seguridad y el control de las solicitudes hacia la API externa.
 
-```bash
-ng generate --help
-```
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
