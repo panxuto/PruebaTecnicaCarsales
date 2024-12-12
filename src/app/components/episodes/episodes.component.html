@@ -1,0 +1,39 @@
+<div class="filter-container">
+    <input
+      type="text"
+      [(ngModel)]="filterText"
+      placeholder="Filtra Episodios por Nombre..."
+      class="filter-input"
+    />
+    <button (click)="clearFilter()" class="clear-button">Limpiar</button>
+  </div>
+  
+  <div class="main-container">
+    <!-- Lista de episodios -->
+    <div class="episodes-list">
+      <div
+        *ngFor="let episode of filteredEpisodes"
+        class="episode-card"
+        (click)="onSelectEpisode(episode)"
+      >
+        <h3>{{ episode.name }}</h3>
+        <p><strong>Air Date:</strong> {{ episode.air_date }}</p>
+        <p><strong>Episode Code:</strong> {{ episode.episode }}</p>
+      </div>
+    </div>
+  
+    <!-- Detalles del episodio -->
+    <div *ngIf="selectedEpisode" class="episode-details">
+      <h2>Details for {{ selectedEpisode.name }}</h2>
+      <p><strong>ID:</strong> {{ selectedEpisode.id }}</p>
+      <p><strong>Air Date:</strong> {{ selectedEpisode.air_date }}</p>
+      <p><strong>Episode Code:</strong> {{ selectedEpisode.episode }}</p>
+      <p><strong>Characters:</strong></p>
+      <ul>
+        <li *ngFor="let character of selectedEpisode.characters">
+          {{ character }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
